@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer component {
+  :root {
+    --primary: #6cb40b;
+    --secondary: #ced2e2;
+    --secondary-variant: #bdbfd2;
+    --tertiary: #1c1f26;
+  }
+}
