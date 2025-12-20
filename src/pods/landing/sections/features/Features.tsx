@@ -9,29 +9,6 @@ export default function Features() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.features',
-        start: 'top 75%',
-        toggleActions: 'play none none none',
-      },
-    });
-
-    tl.to('.section-header', {
-      autoAlpha: 1,
-      duration: .8,
-      ease: 'power4.out',
-    })
-    .to('.features-grid', {
-      autoAlpha: 1,
-        scale: 1,
-      duration: 1.2,
-        stagger: .2,
-      ease: 'back.out(1.2)',
-      }, '-=0.3');
-  }, []);
-
   const data = [
     {
       icon: <Speech />,
@@ -50,23 +27,50 @@ export default function Features() {
     },
   ];
 
+    useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.features',
+        start: 'top 75%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    tl.to('.section-header', {
+      autoAlpha: 1,
+      duration: .8,
+      ease: 'power4.out',
+    })
+    .to('.feature-card', {
+      autoAlpha: 1,
+      scale: 1,
+      duration: 1.2,
+      stagger: .2,
+      ease: 'back.out(1.2)',
+      }, '-=0.3');
+  }, []);
+
   return (
   <>
-      <section ref={sectionRef} className="features w-full min-h-dvh flex flex-col gap-8">
+      <section ref={sectionRef} className="features w-full h-max flex flex-col gap-8">
         <div className="section-header flex justify-between opacity-0">
           <div className="header-left">
-            <h2 className="font-oswald leading-normal text-7xl text-[var(--secondary-variant)] font-extrabold">Features at Fitness Core-Fit</h2>
+            <h2 className="font-oswald leading-normal text-7xl mb-2 text-[var(--secondary-variant)] font-extrabold">Features at Fitness Core-Fit</h2>
             <p className="text-[var(--secondary-variant)] font-medium max-w-[60ch]">Fitness Core-Fit offers top-notch amenities, cutting-edge equipment, and expert trainers to enhance your workout and achieve your goals.</p>
           </div>
         </div>
-        <div className="features-grid grid grid-cols-3 gap-12 opacity-0">
+        <div className="features-grid grid grid-cols-3 gap-12">
           {data.map((d, i) => (
-          <FeatureCard
+            <div
               key={i}
-              icon={d.icon}
-              title={d.title}
-              description={d.description}
-            />
+              className="feature-card opacity-0"
+            >
+              <FeatureCard
+                icon={d.icon}
+                title={d.title}
+                description={d.description}
+              />
+            </div>
           ))}
         </div>
       </section>
