@@ -1,4 +1,11 @@
+@import url("../node_modules/vanilla-infinite-marquee/infinite-marquee.css");
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Oswald:wght@200..700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-oswald: "Oswald", sans-serif;
+  --font-allura: "Allura", cursive;
+}
 
 @layer component {
   :root {
@@ -7,4 +14,32 @@
     --secondary-variant: #bdbfd2;
     --tertiary: #1c1f26;
   }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333333 #1a1a1a;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--tertiary);
 }
