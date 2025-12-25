@@ -63,7 +63,7 @@ export default function Explore() {
 
   return (
   <>
-      <section className="explore w-full min-h-dvh flex flex-col gap-8">
+      <section className="explore w-full h-max flex flex-col gap-8">
         <div className="section-header flex justify-between items-center mb-6 opacity-0">
           <h2 className="font-oswald leading-tight max-w-[15ch] text-7xl text-[var(--secondary-variant)] font-extrabold">Explore Our Wide Range of Programs</h2>
           <p className="font-medium text-[var(--secondary-variant)] max-w-[60ch]">Explore our wide range of programs designed to cater to all fitness levels and preferences. From strength training to yoga, each program is crafted to help you meet your specific goals and enhance your overall health and well-being.</p>
