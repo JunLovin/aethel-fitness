@@ -4,6 +4,7 @@ import Explore from './sections/explore/Explore';
 import Features from './sections/features/Features';
 import Hero from './sections/hero/Hero';
 import ReactLenis from 'lenis/react';
+import Training from './sections/training/Training';
 
 export default function Landing() {
   // const lenis = useLenis();
@@ -21,6 +22,7 @@ export default function Landing() {
           <div className="sub-sections w-[1380px] mx-auto flex flex-col justify-center gap-32">
             <Features />
             <Explore />
+            <Training />
           </div>
         </section>
       </main>
