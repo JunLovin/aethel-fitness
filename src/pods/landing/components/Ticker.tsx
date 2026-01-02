@@ -1,4 +1,3 @@
-import { Slack } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 
 const TickerStar = () => (
